@@ -42,7 +42,16 @@ public class DuckHunt extends Application {
 
         artSelectionScene.setOnKeyPressed(event -> {
             if (event.getCode() == KeyCode.ESCAPE) {
+                ArtSelectionScene.ResetImages();
                 STAGE.setScene(welcomeScene);
+            } else if (event.getCode() == KeyCode.LEFT) {
+                ArtSelectionScene.ChangeBackgroundImage(-1);
+            } else if (event.getCode() == KeyCode.RIGHT) {
+                ArtSelectionScene.ChangeBackgroundImage(1);
+            } else if (event.getCode() == KeyCode.UP) {
+                ArtSelectionScene.ChangeCrossHairImage(1);
+            } else if (event.getCode() == KeyCode.DOWN) {
+                ArtSelectionScene.ChangeCrossHairImage(-1);
             }
         });
 

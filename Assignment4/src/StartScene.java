@@ -27,8 +27,6 @@ public class StartScene {
         Image image = new Image("file:assets/welcome/1.png");
         ImageView imageView = new ImageView();
         imageView.setImage(image);
-        imageView.setSmooth(true);
-        imageView.setCache(true);
         StackPane layout = new StackPane();
         imageView.fitWidthProperty().bind(DuckHunt.getSTAGE().widthProperty());
         imageView.fitHeightProperty().bind(DuckHunt.getSTAGE().heightProperty());

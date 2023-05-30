@@ -38,13 +38,11 @@ public class ArtSelectionScene {
         selectedCrossHair = crossHairList.get(0);
         crossHairView = new ImageView();
         crossHairView.setImage(selectedCrossHair);
+
+        //following line should be adjusted by SCALE.
         crossHairView.setFitWidth(4*10);
         crossHairView.setFitHeight(3*10);
-        Text nextSceneText = new Text("This is the next scene.");
-        nextSceneText.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 50));
-        nextSceneText.setFill(Color.WHITE);
         artSelectionSceneLayout.getChildren().add(backgroundView);
-        //artSelectionSceneLayout.getChildren().add(nextSceneText);
         artSelectionSceneLayout.getChildren().add(crossHairView);
         return new Scene(artSelectionSceneLayout, 4*300, 3*300);
     }
@@ -87,6 +85,9 @@ public class ArtSelectionScene {
         imageView.fitWidthProperty().bind(DuckHunt.getSTAGE().widthProperty());
     }
 
-
+    public static Image GetCrossHair()
+    {
+        return selectedCrossHair;
+    }
 
 }

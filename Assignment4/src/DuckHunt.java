@@ -33,7 +33,7 @@ public class DuckHunt extends Application {
 
         welcomeScene.setOnKeyPressed(event -> {
             if (event.getCode() == KeyCode.ENTER) {
-                STAGE.setScene(artSelectionScene);  // Switch to the next scene
+                STAGE.setScene(artSelectionScene);// Switch to the next scene
             } else if (event.getCode() == KeyCode.ESCAPE) {
                 STAGE.close();  // Close the application
             }
@@ -54,6 +54,9 @@ public class DuckHunt extends Application {
                 ArtSelectionScene.ChangeCrossHairImage(-1);
             }
         });
+
+        //The game scene will be initialized here with selected background and cursor.
+
 
         STAGE.setScene(welcomeScene);
         STAGE.setTitle("HUBBM Duck Hunt");

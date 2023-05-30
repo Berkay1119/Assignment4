@@ -10,7 +10,7 @@ import javafx.scene.text.Text;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArtSelectionScene {
+public class ArtSelectionScene  extends SceneTemplate{
     public static  List<Image>  backgroundList = new ArrayList<>();
 
     public static  List<Image> crossHairList= new ArrayList<>();
@@ -22,7 +22,7 @@ public class ArtSelectionScene {
     private static ImageView backgroundView;
 
     private static ImageView crossHairView;
-    public static Scene CreateScene() {
+    public Scene CreateScene() {
         // Create and configure the next scene
         for (int i = 1; i < 7; i++) {
             backgroundList.add(new Image("file:assets/background/"+i+".png"));

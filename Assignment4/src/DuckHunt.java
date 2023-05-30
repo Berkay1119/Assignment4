@@ -28,8 +28,11 @@ public class DuckHunt extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         STAGE=primaryStage;
-        Scene welcomeScene = StartScene.CreateScene();
-        Scene artSelectionScene = ArtSelectionScene.CreateScene();
+        SceneTemplate startScene=new StartScene();
+        Scene welcomeScene = startScene.CreateScene();
+        
+        SceneTemplate artSelectionSceneIns = new ArtSelectionScene();
+        Scene artSelectionScene = artSelectionSceneIns.CreateScene();
 
         welcomeScene.setOnKeyPressed(event -> {
             if (event.getCode() == KeyCode.ENTER) {

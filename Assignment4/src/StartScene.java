@@ -11,9 +11,9 @@ import javafx.scene.text.*;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class StartScene {
+public class StartScene extends SceneTemplate{
 
-    public static Scene CreateScene()
+    public Scene CreateScene()
     {
         Text welcomeSceneText = new Text();
         welcomeSceneText.setText("\n\n\n\n\n\n\nPRESS ENTER TO START \n PRESS ESC TO EXIT");

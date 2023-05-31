@@ -1,26 +1,14 @@
-import javafx.animation.Animation;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.application.Application;
-import javafx.geometry.Pos;
-import javafx.geometry.VPos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
-import javafx.scene.text.*;
 import javafx.stage.Stage;
-import javafx.util.Duration;
-
 
 public class DuckHunt extends Application {
 
     private static Stage STAGE;
+
+    private static Settings settings;
     public static void main(String[] args) {
         launch();
     }
@@ -55,10 +43,15 @@ public class DuckHunt extends Application {
                 ArtSelectionScene.ChangeCrossHairImage(1);
             } else if (event.getCode() == KeyCode.DOWN) {
                 ArtSelectionScene.ChangeCrossHairImage(-1);
+            } else if (event.getCode() == KeyCode.ENTER) {
+                settings=new Settings(ArtSelectionScene.getCrossHair(),ArtSelectionScene.getBackgroundView(),ArtSelectionScene.getForeGroundView());
+                SceneTemplate gameSceneScript = new GameScene(settings);
+                Scene gameScene = gameSceneScript.CreateScene();
+                STAGE.setScene(gameScene);
             }
         });
 
-        //The game scene will be initialized here with selected background and cursor.
+
 
 
         STAGE.setScene(welcomeScene);

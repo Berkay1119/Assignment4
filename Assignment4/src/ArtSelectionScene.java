@@ -15,6 +15,8 @@ public class ArtSelectionScene  extends SceneTemplate{
 
     public static  List<Image> crossHairList= new ArrayList<>();
 
+    public static  List<Image> foregroundList = new ArrayList<>();
+
     private static Image selectedBackgroundImage;
 
     private static Image selectedCrossHair;
@@ -22,6 +24,11 @@ public class ArtSelectionScene  extends SceneTemplate{
     private static ImageView backgroundView;
 
     private static ImageView crossHairView;
+
+    public static ImageView getBackgroundView() {
+        return backgroundView;
+    }
+
     public Scene CreateScene() {
         // Create and configure the next scene
         for (int i = 1; i < 7; i++) {
@@ -29,6 +36,9 @@ public class ArtSelectionScene  extends SceneTemplate{
         }
         for (int i = 1; i < 8; i++) {
             crossHairList.add(new Image("file:assets/crosshair/"+i+".png"));
+        }
+        for (int i = 1; i < 7; i++) {
+            foregroundList.add(new Image("file:assets/foreground/"+i+".png"));
         }
         selectedBackgroundImage = backgroundList.get(0);
         StackPane artSelectionSceneLayout = new StackPane();
@@ -85,9 +95,15 @@ public class ArtSelectionScene  extends SceneTemplate{
         imageView.fitWidthProperty().bind(DuckHunt.getSTAGE().widthProperty());
     }
 
-    public static Image GetCrossHair()
+    public static Image getCrossHair()
     {
         return selectedCrossHair;
     }
 
+    public static ImageView getForeGroundView(){
+        ImageView imageView = new ImageView();
+        AdjustImageView(imageView);
+        imageView.setImage(foregroundList.get(backgroundList.indexOf(selectedBackgroundImage)));
+        return imageView;
+    }
 }

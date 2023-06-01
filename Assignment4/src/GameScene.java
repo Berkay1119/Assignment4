@@ -2,6 +2,7 @@ import javafx.scene.ImageCursor;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 
 import java.util.ArrayList;
@@ -18,7 +19,7 @@ public class GameScene extends SceneTemplate{
 
     @Override
     Scene CreateScene() {
-        StackPane gameSceneLayout = new StackPane();
+        Pane gameSceneLayout = new Pane();
         gameSceneLayout.getChildren().add(SETTINGS.get_background());
         gameSceneLayout.getChildren().add(CreateHorizontalDuck().getDuckView());
         gameSceneLayout.getChildren().add(SETTINGS.get_foreground());
